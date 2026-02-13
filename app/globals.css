@@ -9,12 +9,10 @@
 
 .animate-marquee {
   display: flex;
-  /* Faster speed for mobile is often better; adjusted to 30s */
   animation: marquee 30s linear infinite;
   width: max-content;
 }
 
-/* On mobile, we disable hover-pause to prevent accidental stopping while scrolling */
 @media (hover: hover) {
   .animate-marquee:hover {
     animation-play-state: paused;
@@ -25,15 +23,21 @@ html, body {
   @apply text-gray-900 antialiased;
   margin: 0;
   padding: 0;
-  min-height: 100%; /* Changed from height: 100% */
+  /* 1. Use dvh (dynamic viewport height) to prevent white gaps on scroll */
+  min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   overflow-x: hidden; 
   scroll-behavior: smooth;
-  /* Mobile-friendly gradient fix: Use 'fixed' so it doesn't stretch/break on scroll */
-  background: linear-gradient(180deg, #315a42 0%, #77581f 100%) fixed;
+  
+  /* 2. Add a solid background color fallback that matches your gradient start */
+  background-color: #315a42; 
+  
+  /* 3. The 'fixed' and 'cover' properties ensure the gradient never stutters */
+  background: linear-gradient(180deg, #315a42 0%, #77581f 100%) fixed no-repeat;
+  background-size: cover;
 }
 
-/* Ensure images/icons don't get squashed on tiny screens */
 .animate-marquee img, .animate-marquee svg {
   flex-shrink: 0;
 }
