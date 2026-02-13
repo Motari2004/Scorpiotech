@@ -76,26 +76,36 @@ export default function ProjectsPage() {
           </a>
         </div>
 
-        {/* WhatsApp Bot - THEME: GREEN/CHAT */}
-        <div className="group bg-slate-900/40 backdrop-blur-md border border-emerald-500/20 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between hover:border-emerald-500/50 transition-all duration-500">
-          <div>
-            <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <span className="text-2xl">💬</span>
-            </div>
-            <h3 className="text-2xl font-bold mb-3 text-white">Scorpio Control</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-8">
-              Messaging automation. Secure, remote observation and tracking for optimized communication.
-            </p>
-          </div>
-          <a 
-            href="https://scorpiocontrol-5fem.onrender.com/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-full text-center py-4 bg-emerald-600 text-white rounded-2xl font-bold text-sm hover:bg-emerald-500 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all"
-          >
-            Go to Console
-          </a>
-        </div>
+      {/* WhatsApp Engine - THEME: GREEN/CHAT */}
+<div className="group bg-slate-900/40 backdrop-blur-md border border-emerald-500/20 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between hover:border-emerald-500/50 transition-all duration-500">
+  <div>
+    <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+      <span className="text-2xl">⚡</span> 
+    </div>
+    <h3 className="text-2xl font-bold mb-3 text-white">Scorpio Control</h3>
+    <p className="text-gray-400 text-sm leading-relaxed mb-8">
+      A powerful engine to view and auto-react to statuses. Track view counts and manage your bot in real-time with an easy QR-scan dashboard.
+    </p>
+  </div>
+  
+  <div className="space-y-3">
+    {/* Feature Tags for quick info */}
+    <div className="flex flex-wrap gap-2 mb-4">
+      <span className="text-[10px] px-2 py-1 bg-emerald-500/10 text-emerald-400 rounded-md border border-emerald-500/20">QR Auth</span>
+      <span className="text-[10px] px-2 py-1 bg-emerald-500/10 text-emerald-400 rounded-md border border-emerald-500/20">Auto-React</span>
+      <span className="text-[10px] px-2 py-1 bg-emerald-500/10 text-emerald-400 rounded-md border border-emerald-500/20">Live Logs</span>
+    </div>
+
+    <a 
+      href="https://scorpiocontrol-5fem.onrender.com/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="block w-full text-center py-4 bg-emerald-600 text-white rounded-2xl font-bold text-sm hover:bg-emerald-500 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all"
+    >
+      Launch Dashboard
+    </a>
+  </div>
+</div>
 
       </div>
     </section>
