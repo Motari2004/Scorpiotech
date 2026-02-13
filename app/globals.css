@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  /* We move by 50% because we have two identical sets of icons */
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 40s linear infinite;
+}
+
+/* Pause the scroll when a user hovers to check an icon */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+/* Professional light grey-brown background */
+html, body {
+  @apply text-gray-900 antialiased;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; 
+  overflow-y: auto;   
+  scroll-behavior: smooth;
+  background: linear-gradient(180deg, #315a42 0%, #77581f 100%);
+}
+
+
+
+
