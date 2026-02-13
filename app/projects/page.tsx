@@ -13,26 +13,39 @@ export default function ProjectsPage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 mt-10">
         
-        {/* Scorpio AI - THEME: PURPLE/AI */}
-        <div className="group bg-slate-900/40 backdrop-blur-md border border-purple-500/20 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between hover:border-purple-500/50 transition-all duration-500">
-          <div>
-            <div className="w-12 h-12 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <span className="text-2xl">🤖</span>
-            </div>
-            <h3 className="text-2xl font-bold mb-3 text-white">Scorpio AI</h3>
-            <p className="text-gray-400 text-sm leading-relaxed mb-8">
-              Advanced neural automation. Handling complex logic and user queries with surgical precision.
-            </p>
-          </div>
-          <a 
-            href="https://scorpioai.vercel.app" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-full text-center py-4 bg-purple-600 text-white rounded-2xl font-bold text-sm hover:bg-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all"
-          >
-            Launch Scorpio
-          </a>
-        </div>
+
+
+
+
+
+        {/* Scorpio AI - THEME: BLUE/PURPLE/AI */}
+<div className="group bg-slate-900/40 backdrop-blur-md border border-blue-500/20 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between hover:border-blue-500/50 transition-all duration-500">
+  <div>
+    <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+      <span className="text-2xl">🧠</span> 
+    </div>
+    <h3 className="text-2xl font-bold mb-3 text-white">Scorpio AI</h3>
+    <p className="text-gray-400 text-sm leading-relaxed mb-8">
+      A sophisticated intelligent assistant that chats naturally and writes code. Designed to handle complex logic, solve problems, and assist users with human-like precision.
+    </p>
+  </div>
+  
+  <div className="space-y-3">
+    {/* Capability Tags */}
+    <div className="flex flex-wrap gap-2 mb-4">
+      <span className="text-[10px] px-2 py-1 bg-blue-500/10 text-blue-400 rounded-md border border-blue-500/20">Natural Chat</span>
+      <span className="text-[10px] px-2 py-1 bg-blue-500/10 text-blue-400 rounded-md border border-blue-500/20">Code Generation</span>
+      <span className="text-[10px] px-2 py-1 bg-blue-500/10 text-blue-400 rounded-md border border-blue-500/20">Problem Solver</span>
+    </div>
+
+    <a 
+      href="#" 
+      className="block w-full text-center py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all"
+    >
+      Chat with AI
+    </a>
+  </div>
+</div>
 
         {/* Deep Translate - THEME: BLUE/GLOBAL */}
         <div className="group bg-slate-900/40 backdrop-blur-md border border-blue-500/20 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between hover:border-blue-500/50 transition-all duration-500">
@@ -82,9 +95,9 @@ export default function ProjectsPage() {
     <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
       <span className="text-2xl">⚡</span> 
     </div>
-    <h3 className="text-2xl font-bold mb-3 text-white">Scorpio Control</h3>
+    <h3 className="text-2xl font-bold mb-3 text-white">Status View</h3>
     <p className="text-gray-400 text-sm leading-relaxed mb-8">
-      A powerful engine to view and auto-react to statuses. Track view counts and manage your bot in real-time with an easy QR-scan dashboard.
+      A powerful WhatsApp engine to view and auto-react to statuses. Track view counts and manage your bot in real-time with an easy QR-scan dashboard.
     </p>
   </div>
   
