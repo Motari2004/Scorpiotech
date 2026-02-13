@@ -129,7 +129,7 @@ export default function CustomerBoxPage() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
-              <p className="text-[9px] text-gray-600 text-center px-4 font-bold uppercase tracking-tighter">Fast response guaranteed.</p>
+              
               <div className="flex gap-2 pt-2">
                 <button type="button" onClick={prevStep} className="text-[10px] font-black text-gray-500 uppercase px-2">Back</button>
                 <button type="submit" className="flex-grow bg-green-700 text-white font-black py-3.5 rounded-xl text-sm">Send Brief</button>

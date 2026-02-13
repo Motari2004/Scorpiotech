@@ -1,20 +1,21 @@
 export default function AboutPage() {
   return (
-    <section className="pt-24 md:pt-32 px-4 md:px-6 max-w-6xl mx-auto space-y-12 pb-20">
+    /* Reduced pt-24 to pt-4 for mobile and pt-32 to pt-8 for desktop */
+    <section className="pt-4 md:pt-8 px-4 md:px-6 max-w-6xl mx-auto space-y-10 pb-20">
 
-      {/* Page Title - Scaled for Mobile */}
+      {/* Page Title - Now starts much higher up */}
       <h2 className="text-4xl md:text-6xl font-bold text-white text-center tracking-tight">
         About <span className="text-yellow-500">Scorpio Digital</span>
       </h2>
 
-      {/* Introduction - Contrast Fixed for better readability */}
+      {/* Introduction */}
       <p className="text-gray-100 text-base md:text-xl leading-relaxed text-center max-w-3xl mx-auto">
         Scorpio Digital is a forward-thinking tech agency helping businesses thrive online. 
         We specialize in building robust backend systems and modern, responsive frontend solutions 
         that scale, perform, and impress users.
       </p>
 
-      {/* Core Strengths - 2x2 Grid on Mobile */}
+      {/* Core Strengths - 2x2 Grid stays consistent with Home Page */}
       <div className="grid grid-cols-2 lg:grid-cols-2 gap-3 md:gap-8">
 
         <div className="bg-[#e0d7c6]/95 backdrop-blur-sm border border-[#cbbfa8] p-4 md:p-8 rounded-2xl shadow-lg hover:-translate-y-2 transition-all duration-300 flex flex-col">
