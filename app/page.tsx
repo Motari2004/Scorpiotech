@@ -62,34 +62,35 @@ export default function HomePage() {
     <div className="space-y-24 md:space-y-32 pb-20">
 
       {/* --- HERO SECTION --- */}
-      <section className="pt-24 md:pt-32 px-4 max-w-6xl mx-auto space-y-8">
-        <h1 className="text-4xl md:text-6xl font-extrabold text-center text-gray-900 leading-tight">
-          We Build Cutting-Edge <span className="text-[#77581f]">Digital Solutions</span>
-        </h1>
-        <p className="text-center text-gray-700 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
-          Scorpio Digital empowers businesses to thrive online by delivering robust backend systems, 
-          modern frontend interfaces, and smart automation tools.
-        </p>
+{/* FIX: Removed pt-24/32. Now using pt-4 so it starts right below the navbar padding. */}
+<section className="pt-4 md:pt-8 px-4 max-w-6xl mx-auto space-y-8">
+  <h1 className="text-4xl md:text-6xl font-extrabold text-center text-white leading-tight">
+    We Build Cutting-Edge <span className="text-yellow-500">Digital Solutions</span>
+  </h1>
+  
+  <p className="text-center text-gray-200 text-base md:text-xl max-w-3xl mx-auto leading-relaxed">
+    Scorpio Digital empowers businesses to thrive online by delivering robust backend systems, 
+    modern frontend interfaces, and smart automation tools.
+  </p>
 
-        {/* 2x2 Grid on Mobile, 3 cols on Desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 mt-12">
-          <ServiceCard 
-            title="Frontend" 
-            description="Modern, responsive websites designed to drive conversions." 
-          />
-          <ServiceCard 
-            title="Backend" 
-            description="Secure, scalable, and reliable systems for automation." 
-          />
-          {/* On mobile (2-col), we make the 3rd card span full width to look centered */}
-          <div className="col-span-2 lg:col-span-1">
-            <ServiceCard 
-              title="Automation" 
-              description="Custom tools to streamline your business processes." 
-            />
-          </div>
-        </div>
-      </section>
+  {/* 2x2 Grid on Mobile, 3 cols on Desktop */}
+  <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 mt-12">
+    <ServiceCard 
+      title="Frontend" 
+      description="Modern, responsive websites designed to drive conversions." 
+    />
+    <ServiceCard 
+      title="Backend" 
+      description="Secure, scalable, and reliable systems for automation." 
+    />
+    <div className="col-span-2 lg:col-span-1">
+      <ServiceCard 
+        title="Automation" 
+        description="Custom tools to streamline your business processes." 
+      />
+    </div>
+  </div>
+</section>
 
       {/* --- FEATURES SECTION (2x2 Grid) --- */}
       <section className="px-4 max-w-6xl mx-auto space-y-8">
