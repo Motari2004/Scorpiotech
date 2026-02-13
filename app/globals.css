@@ -4,32 +4,36 @@
 
 @keyframes marquee {
   0% { transform: translateX(0); }
-  /* We move by 50% because we have two identical sets of icons */
   100% { transform: translateX(-50%); }
 }
 
 .animate-marquee {
   display: flex;
-  animation: marquee 40s linear infinite;
+  /* Faster speed for mobile is often better; adjusted to 30s */
+  animation: marquee 30s linear infinite;
+  width: max-content;
 }
 
-/* Pause the scroll when a user hovers to check an icon */
-.animate-marquee:hover {
-  animation-play-state: paused;
+/* On mobile, we disable hover-pause to prevent accidental stopping while scrolling */
+@media (hover: hover) {
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
 }
-/* Professional light grey-brown background */
+
 html, body {
   @apply text-gray-900 antialiased;
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%; /* Changed from height: 100% */
   width: 100%;
   overflow-x: hidden; 
-  overflow-y: auto;   
   scroll-behavior: smooth;
-  background: linear-gradient(180deg, #315a42 0%, #77581f 100%);
+  /* Mobile-friendly gradient fix: Use 'fixed' so it doesn't stretch/break on scroll */
+  background: linear-gradient(180deg, #315a42 0%, #77581f 100%) fixed;
 }
 
-
-
-
+/* Ensure images/icons don't get squashed on tiny screens */
+.animate-marquee img, .animate-marquee svg {
+  flex-shrink: 0;
+}
