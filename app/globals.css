@@ -19,23 +19,35 @@
   }
 }
 
-html, body {
+html {
+  /* This ensures the 'base canvas' of the browser is your green */
+  background-color: #315a42; 
+  /* Prevents horizontal scroll leaks */
+  overflow-x: hidden;
+  /* Necessary for some mobile browsers to pin the height */
+  height: -webkit-fill-available;
+}
+
+body {
   @apply text-gray-900 antialiased;
   margin: 0;
   padding: 0;
-  /* 1. Use dvh (dynamic viewport height) to prevent white gaps on scroll */
+  width: 100%;
+  
+  /* Use dvh for the dynamic height of mobile bars */
   min-height: 100vh;
   min-height: 100dvh;
-  width: 100%;
-  overflow-x: hidden; 
-  scroll-behavior: smooth;
   
-  /* 2. Add a solid background color fallback that matches your gradient start */
-  background-color: #315a42; 
-  
-  /* 3. The 'fixed' and 'cover' properties ensure the gradient never stutters */
+  /* The 'fixed' property is key, but 'background-attachment' can be finicky on mobile */
   background: linear-gradient(180deg, #315a42 0%, #77581f 100%) fixed no-repeat;
   background-size: cover;
+
+  /* STOPS THE WHITE BOUNCE: This prevents the 'pull-to-refresh' and 'end-of-page' 
+     rubber-banding from showing the white browser layer. */
+  overscroll-behavior-y: none;
+  
+  /* Support for older mobile browsers height */
+  min-height: -webkit-fill-available;
 }
 
 .animate-marquee img, .animate-marquee svg {
