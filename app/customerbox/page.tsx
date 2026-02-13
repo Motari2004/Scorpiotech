@@ -26,8 +26,28 @@ export default function CustomerBoxPage() {
     if (result.success) setIsSubmitted(true);
   };
 
-  const projectOptions = ["Website", "SaaS", "Automation", "Bot", "Backend"];
-  const budgetOptions = ["$20 - $100", "$100 - $500", "$500 - $1k", "$1k - $5k"];
+  // Expanded Professional List
+  const projectOptions = [
+    "Website", 
+    "SaaS", 
+    "Automation", 
+    "Telegram Bot", 
+    "WhatsApp Bot", 
+    "E-commerce Store",
+    "Personalized AI Chatbot",
+    "Scheduling System", 
+    "News/Media Portal",
+    "CRM",
+    "Community Forum",
+    "Internal Business Tools",
+    "Linguistic Tools",
+    "Data Scraper",
+    "Inventory Management", 
+    "API Solution"
+    
+  ];
+  
+  const budgetOptions = ["$20 - $100", "$100 - $500", "$500 - $1k", "$1k - $5k+"];
 
   if (isSubmitted) {
     return (
@@ -42,12 +62,8 @@ export default function CustomerBoxPage() {
   }
 
   return (
-    /* FIX: Used h-[100dvh] (Dynamic Viewport Height). 
-      This ensures the box stays centered even when the address bar disappears/appears.
-    */
     <div className="fixed inset-0 h-[100dvh] w-full flex items-center justify-center px-4 z-40 pointer-events-none">
       
-      {/* This inner div is the actual box */}
       <div className="w-full max-w-sm bg-[#e0d7c6]/95 backdrop-blur-md border border-[#cbbfa8] rounded-[2.5rem] shadow-2xl relative overflow-hidden pointer-events-auto">
         
         {/* Progress Header */}
@@ -68,16 +84,18 @@ export default function CustomerBoxPage() {
             </div>
           )}
 
-          {/* STEP 1 */}
+          {/* STEP 1: Project Type Selection */}
           {step === 1 && (
             <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-300">
               <h2 className="text-xl font-black text-gray-900">Project Type</h2>
-              <div className="grid grid-cols-2 gap-2">
+              
+              {/* Added h-48 and overflow-y-auto so the list doesn't break the box height */}
+              <div className="grid grid-cols-2 gap-2 max-h-48 overflow-y-auto pr-1 custom-scrollbar">
                 {projectOptions.map((opt) => (
                   <button
                     key={opt}
                     onClick={() => setFormData({ ...formData, projectType: opt })}
-                    className={`py-3 text-xs font-bold rounded-xl border transition-all active:scale-95 ${
+                    className={`py-3 text-[10px] md:text-xs font-bold rounded-xl border transition-all active:scale-95 ${
                       formData.projectType === opt ? "bg-[#77581f] text-white border-[#77581f] shadow-lg" : "bg-white/40 text-gray-700 border-[#cbbfa8]"
                     }`}
                   >
@@ -85,9 +103,10 @@ export default function CustomerBoxPage() {
                   </button>
                 ))}
               </div>
+
               <textarea
-                className="w-full p-4 text-sm rounded-xl border border-[#cbbfa8] bg-white/50 outline-none h-24 resize-none focus:border-[#77581f] transition-all"
-                placeholder="What are we building today?"
+                className="w-full p-4 text-sm rounded-xl border border-[#cbbfa8] bg-white/50 outline-none h-20 resize-none focus:border-[#77581f] transition-all"
+                placeholder="Tell us a little more about your needs..."
                 value={formData.details}
                 onChange={(e) => setFormData({ ...formData, details: e.target.value })}
               />
@@ -101,7 +120,7 @@ export default function CustomerBoxPage() {
             </div>
           )}
 
-          {/* STEP 2 */}
+          {/* STEP 2: Budget */}
           {step === 2 && (
             <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
               <h2 className="text-xl font-black text-gray-900">Budget Range</h2>
@@ -131,7 +150,7 @@ export default function CustomerBoxPage() {
             </div>
           )}
 
-          {/* STEP 3 */}
+          {/* STEP 3: Email */}
           {step === 3 && (
             <form onSubmit={handleSubmit} className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-300">
               <h2 className="text-xl font-black text-gray-900">Contact Info</h2>
@@ -145,7 +164,7 @@ export default function CustomerBoxPage() {
               />
               <div className="bg-white/20 p-3 rounded-lg border border-[#cbbfa8]/30">
                 <p className="text-[10px] text-gray-600 text-center font-bold uppercase leading-tight">
-                   Your requirements will be reviewed with technical precision.
+                   Our engineering team will analyze your project data. We will reach out via email with our feedback and recommended next steps.
                 </p>
               </div>
               <div className="flex gap-3 pt-2">

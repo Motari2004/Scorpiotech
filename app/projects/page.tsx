@@ -1,71 +1,99 @@
 export default function ProjectsPage() {
   return (
-    /* pt-4 for mobile to bring the title right up to the navbar */
-    <section className="pt-4 md:pt-12 px-4 md:px-6 max-w-6xl mx-auto space-y-8 pb-20">
+    <section className="pt-4 md:pt-12 px-4 md:px-6 max-w-7xl mx-auto space-y-10 pb-20">
       
-      <div className="space-y-2">
-        <h2 className="text-4xl md:text-6xl font-extrabold text-white text-center tracking-tight">
-          Our <span className="text-yellow-500">Projects</span>
+      <div className="space-y-3">
+        <h2 className="text-4xl md:text-7xl font-extrabold text-white text-center tracking-tighter">
+          Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">Digital Arsenal</span>
         </h2>
-        <p className="text-center text-gray-200 text-sm md:text-lg max-w-2xl mx-auto">
-          Explore the digital solutions we’ve built to help businesses and individuals thrive.
+        <p className="text-center text-gray-400 text-sm md:text-lg max-w-2xl mx-auto font-medium">
+          Premium tools engineered for speed, automation, and global connectivity.
         </p>
       </div>
 
-      {/* grid-cols-1 on small mobile, grid-cols-2 on small tablets, 3 on desktop */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 mt-10">
         
-        {/* AI Chatbot */}
-        <div className="bg-[#e0d7c6]/95 backdrop-blur-sm border border-[#cbbfa8] p-6 rounded-3xl shadow-xl flex flex-col justify-between hover:-translate-y-2 transition-all duration-300">
+        {/* Scorpio AI - THEME: PURPLE/AI */}
+        <div className="group bg-slate-900/40 backdrop-blur-md border border-purple-500/20 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between hover:border-purple-500/50 transition-all duration-500">
           <div>
-            <h3 className="text-xl font-black mb-2 text-gray-900">Scorpio AI</h3>
-            <p className="text-gray-800 text-sm leading-relaxed mb-4">
-              An intelligent AI chatbot designed for complex automation tasks and user queries.
+            <div className="w-12 h-12 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span className="text-2xl">🤖</span>
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-white">Scorpio AI</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-8">
+              Advanced neural automation. Handling complex logic and user queries with surgical precision.
             </p>
           </div>
           <a 
             href="https://scorpioai.vercel.app" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block w-full text-center py-3 bg-gray-900 text-white rounded-xl font-bold text-xs hover:bg-black transition-colors"
+            className="w-full text-center py-4 bg-purple-600 text-white rounded-2xl font-bold text-sm hover:bg-purple-500 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all"
           >
-            Visit Live Project
+            Launch Scorpio
           </a>
         </div>
 
-        {/* Instagram Video Downloader */}
-        <div className="bg-[#e0d7c6]/95 backdrop-blur-sm border border-[#cbbfa8] p-6 rounded-3xl shadow-xl flex flex-col justify-between hover:-translate-y-2 transition-all duration-300">
+        {/* Deep Translate - THEME: BLUE/GLOBAL */}
+        <div className="group bg-slate-900/40 backdrop-blur-md border border-blue-500/20 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between hover:border-blue-500/50 transition-all duration-500">
           <div>
-            <h3 className="text-xl font-black mb-2 text-gray-900">IG Downloader</h3>
-            <p className="text-gray-800 text-sm leading-relaxed mb-4">
-              High-speed utility to download Instagram content for personal and professional management.
+            <div className="w-12 h-12 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span className="text-2xl">🌍</span>
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-white">Deep Translate</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-8">
+              Breaking barriers. Featuring Arabic transliteration and real-time linguistic processing.
+            </p>
+          </div>
+          <a 
+            href="https://translator-qr08.onrender.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-full text-center py-4 bg-blue-600 text-white rounded-2xl font-bold text-sm hover:bg-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] transition-all"
+          >
+            Open Translator
+          </a>
+        </div>
+
+        {/* IG Downloader - THEME: PINK/SOCIAL */}
+        <div className="group bg-slate-900/40 backdrop-blur-md border border-pink-500/20 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between hover:border-pink-500/50 transition-all duration-500">
+          <div>
+            <div className="w-12 h-12 bg-pink-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span className="text-2xl">📸</span>
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-white">IG Media</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-8">
+              Professional content extraction. High-fidelity video and image scraping at lightning speeds.
             </p>
           </div>
           <a 
             href="https://igdown-01en.onrender.com/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block w-full text-center py-3 bg-gray-900 text-white rounded-xl font-bold text-xs hover:bg-black transition-colors"
+            className="w-full text-center py-4 bg-pink-600 text-white rounded-2xl font-bold text-sm hover:bg-pink-500 hover:shadow-[0_0_20px_rgba(236,72,153,0.4)] transition-all"
           >
-            Visit Live Project
+            Access Downloader
           </a>
         </div>
 
-        {/* WhatsApp Viewing Bot */}
-        <div className="bg-[#e0d7c6]/95 backdrop-blur-sm border border-[#cbbfa8] p-6 rounded-3xl shadow-xl flex flex-col justify-between hover:-translate-y-2 transition-all duration-300">
+        {/* WhatsApp Bot - THEME: GREEN/CHAT */}
+        <div className="group bg-slate-900/40 backdrop-blur-md border border-emerald-500/20 p-8 rounded-[2.5rem] shadow-2xl flex flex-col justify-between hover:border-emerald-500/50 transition-all duration-500">
           <div>
-            <h3 className="text-xl font-black mb-2 text-gray-900">WhatsApp Bot</h3>
-            <p className="text-gray-800 text-sm leading-relaxed mb-4">
-              Automation bot for tracking and viewing messages efficiently in a controlled environment.
+            <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <span className="text-2xl">💬</span>
+            </div>
+            <h3 className="text-2xl font-bold mb-3 text-white">Scorpio Control</h3>
+            <p className="text-gray-400 text-sm leading-relaxed mb-8">
+              Messaging automation. Secure, remote observation and tracking for optimized communication.
             </p>
           </div>
           <a 
             href="https://scorpiocontrol-5fem.onrender.com/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-block w-full text-center py-3 bg-gray-900 text-white rounded-xl font-bold text-xs hover:bg-black transition-colors"
+            className="w-full text-center py-4 bg-emerald-600 text-white rounded-2xl font-bold text-sm hover:bg-emerald-500 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all"
           >
-            Visit Live Project
+            Go to Console
           </a>
         </div>
 
