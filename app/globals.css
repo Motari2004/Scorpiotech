@@ -20,12 +20,13 @@
 }
 
 html {
-  /* This ensures the 'base canvas' of the browser is your green */
+  /* 1. Use the color fallback here to stop the white flash */
   background-color: #315a42; 
-  /* Prevents horizontal scroll leaks */
+  /* 2. Changed height to min-height to allow scrolling */
+  min-height: 100%;
   overflow-x: hidden;
-  /* Necessary for some mobile browsers to pin the height */
-  height: -webkit-fill-available;
+  /* Allows smooth scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -34,20 +35,21 @@ body {
   padding: 0;
   width: 100%;
   
-  /* Use dvh for the dynamic height of mobile bars */
+  /* 3. Changed height logic to be 'min-height' only */
   min-height: 100vh;
   min-height: 100dvh;
   
-  /* The 'fixed' property is key, but 'background-attachment' can be finicky on mobile */
-  background: linear-gradient(180deg, #315a42 0%, #77581f 100%) fixed no-repeat;
+  /* 4. Removed 'fixed' from here - fixed backgrounds on body are a primary 
+     cause of scroll-lock on iPhones. We use a different trick below. */
+  background: linear-gradient(180deg, #315a42 0%, #77581f 100%) no-repeat;
+  background-attachment: scroll; /* Changed from fixed */
   background-size: cover;
 
-  /* STOPS THE WHITE BOUNCE: This prevents the 'pull-to-refresh' and 'end-of-page' 
-     rubber-banding from showing the white browser layer. */
-  overscroll-behavior-y: none;
+  /* 5. RE-ENABLED scrolling by setting this to auto */
+  overscroll-behavior-y: auto; 
   
-  /* Support for older mobile browsers height */
-  min-height: -webkit-fill-available;
+  /* Ensure the page can actually be touched and dragged */
+  touch-action: auto; 
 }
 
 .animate-marquee img, .animate-marquee svg {

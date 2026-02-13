@@ -4,22 +4,24 @@ import Footer from "./components/Footer";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
-        {/* This tells the mobile browser UI to match your green background */}
         <meta name="theme-color" content="#315a42" />
       </head>
-      {/* FIX: Removed 'bg-gray-100'. 
-        The background is now handled entirely by globals.css to prevent "flashing".
+      {/* 1. Removed overflow-x-hidden from body (it can break scrolling).
+          2. Added 'relative' so the background layer stays behind.
       */}
-      <body className="text-gray-900 antialiased min-h-screen flex flex-col overflow-x-hidden">
+      <body className="text-gray-900 antialiased min-h-full flex flex-col relative">
+        
+        {/* THE SECRET FIX: This div is your background. 
+            It stays fixed, so it never shows white space, 
+            but it doesn't interfere with the scrolling of the content. 
+        */}
+        <div className="fixed inset-0 -z-10 h-full w-full bg-[#315a42] bg-gradient-to-b from-[#315a42] to-[#77581f] pointer-events-none" />
+
         <Navbar />
         
-        {/* Main Content: 
-          'flex-grow' ensures the footer is pushed to the bottom.
-          'pt-24' (or similar) ensures content doesn't sit under the fixed Navbar.
-        */}
-        <main className="flex-grow w-full max-w-7xl mx-auto px-4 py-8 md:px-8 pt-28">
+        <main className="flex-grow w-full max-w-7xl mx-auto px-4 pt-32 pb-12 md:px-8">
           {children}
         </main>
 
